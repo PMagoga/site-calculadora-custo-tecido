@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body{
+      font-family: sans-serif;
+      font-size: 14px;
+    }
+    h1{
+      text-align: center;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      border:2px solid red;
+    }
+    p{
+      background-color: AliceBlue;
+    }
+    #reforco{
+      text-decoration-line: underline;
+      text-decoration-color: red;
+    }
+  </style>
+  <title>Calculadora de Custo de Tecido</title>
+</head>
+<body>
+  <h1>Calculadora de Custo de Tecido</h1>
+  <p>Esta é um pequena calculadora, que faz o cálculo do valor de confecção de uma peça tendo como base seu tamanho, preço do tecido por metro quadrado mais o valor dos acessórios usados.</p>
+  <p>Insira o comprimento e a largura do tecido em <b id=reforco>CENTÍMETROS</b>:</p>
+  <form id="form">
+    <label for="comprimento">Comprimento:</label><br>
+    <input type="number" id="comprimento" name="comprimento"><br>
+    <label for="largura">Largura:</label><br>
+    <input type="number" id="largura" name="largura"><br>
+    <label for="custoTecido">Custo do Tecido por Metro Quadrado:</label><br>
+    <input type="number" id="custoTecido" name="custoTecido"><br>
+    <label for="acessorios">Valores dos acessórios utilizados para confecção da peça:</label><br>
+    <input type="number" id="acessorios" name="acessorios"><br>
+    <br>
+    <input type="button" value="Calcular Custo de Produção da Peça" onclick="calculateCost()">
+  </form> 
+  <br>
+  <p>O custo total da peça é:</p>
+  <p id="cost"></p>
+
+  <script>
+    function calculateCost() {
+      // Obtém os valores do comprimento, largura, custo do tecido e dos acessórios
+      var comprimento = document.getElementById("comprimento").value;
+      var largura = document.getElementById("largura").value;
+      var custoTecido = document.getElementById("custoTecido").value;
+      var acessorios = document.getElementById("acessorios").value;
+
+      // Calcula o custo da peça baseado no comprimento e largura
+      var quantidadeTecido = (comprimento * largura);
+      var quantidadeTecidoMetro = parseFloat(quantidadeTecido) / 10000;
+      var valorTecido = quantidadeTecidoMetro * custoTecido;
+      var teste = acessorios * 1;
+      var total = parseFloat(valorTecido + teste);
+      var custoTotal = total;
+      var cost = custoTotal.toFixed(2);
+
+      // Exibe o custo total da peça
+      document.getElementById("cost").innerHTML = "R$ " + cost;
+    }
+  </script>
+</body>
+</html>
