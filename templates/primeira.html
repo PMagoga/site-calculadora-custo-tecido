@@ -19,16 +19,17 @@
       text-decoration-line: underline;
       text-decoration-color: red;
     }
-    #form{
-      font-size:20px;
+    form{
+      font-size:30px;
     }
+    
   </style>
   <title>Calculadora de Custo de Tecido</title>
 </head>
 <body>
   <h1>Calculadora de Custo de Tecido</h1>
   <p>Esta é um pequena calculadora, que faz o cálculo do valor de confecção de uma peça tendo como base seu tamanho, preço do tecido por metro quadrado mais o valor dos acessórios usados.</p>
-  <p>Insira o comprimento e a largura do tecido em <b id=reforco>CENTÍMETROS</b>:</p>
+  <p>Insira o comprimento e a largura do tecido em <b id=reforco>CENTÍMETROS</b>: não use vírgula, e para os valores em reais utilize <b>PONTO</b> ao invés de vírgula.</p>
   <form id="form">
     <label for="comprimento">Comprimento:</label><br>
     <input type="number" id="comprimento" name="comprimento"><br>
@@ -39,7 +40,7 @@
     <label for="acessorios">Valores dos acessórios utilizados para confecção da peça:</label><br>
     <input type="number" id="acessorios" name="acessorios"><br>
     <br>
-    <input type="button" value="Calcular Custo de Produção da Peça" onclick="calculateCost()">
+    <input type="button" style=font-size:33px value="Calcular Custo de Produção da Peça" onclick="calculateCost()">
   </form> 
   <br>
   <p>O custo total da peça é:</p>
